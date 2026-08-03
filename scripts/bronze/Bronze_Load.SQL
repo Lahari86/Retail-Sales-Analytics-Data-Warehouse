@@ -112,13 +112,13 @@ BEGIN
 		PRINT('------------------------------------------------------------');
 
 
-		-- bronze_LOC_A101
+		-- bronze_erp_LOC_A101
 		SET @start_time = GETDATE();
-		PRINT('>>Truncating Table: bronze_LOC_A101');
-		TRUNCATE TABLE bronze_LOC_A101; --FIRST DELETES ALL THE ROWS FROM THE TABLE
+		PRINT('>>Truncating Table: bronze_erp_LOC_A101');
+		TRUNCATE TABLE bronze_erp_LOC_A101; --FIRST DELETES ALL THE ROWS FROM THE TABLE
 
-		PRINT('>>Loading Table: bronze_LOC_A101');
-		BULK INSERT bronze_LOC_A101
+		PRINT('>>Loading Table: bronze_erp_LOC_A101');
+		BULK INSERT bronze_erp_LOC_A101
 		FROM 'C:\Desktop\Datawarehouse_projects\Sales_Customer_project\datasets\source_erp\LOC_A101.csv'
 		WITH (
 			FIRSTROW = 2,
@@ -126,20 +126,20 @@ BEGIN
 			TABLOCK
 		);
 
-		--SELECT * FROM bronze_LOC_A101;
-		--SELECT COUNT(*) FROM bronze_LOC_A101;
+		--SELECT * FROM bronze_erp_LOC_A101;
+		--SELECT COUNT(*) FROM bronze_erp_LOC_A101;
 		SET @end_time = GETDATE();
 		PRINT('>>Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + 'seconds');
 		PRINT('------------------------------------------------------------');
 
 
-		-- bronze_PX_CAT_G1V2
+		-- bronze_erp_PX_CAT_G1V2
 		SET @start_time = GETDATE();
-		PRINT('>>Truncating Table: bronze_PX_CAT_G1V2');
-		TRUNCATE TABLE bronze_PX_CAT_G1V2; --FIRST DELETES ALL THE ROWS FROM THE TABLE
+		PRINT('>>Truncating Table: bronze_erp_PX_CAT_G1V2');
+		TRUNCATE TABLE bronze_erp_PX_CAT_G1V2; --FIRST DELETES ALL THE ROWS FROM THE TABLE
 
-		PRINT('>>Loading Table: bronze_PX_CAT_G1V2');
-		BULK INSERT bronze_PX_CAT_G1V2
+		PRINT('>>Loading Table: bronze_erp_PX_CAT_G1V2');
+		BULK INSERT bronze_erp_PX_CAT_G1V2
 		FROM 'C:\Desktop\Datawarehouse_projects\Sales_Customer_project\datasets\source_erp\PX_CAT_G1V2.csv'
 		WITH (
 			FIRSTROW = 2,
@@ -147,8 +147,8 @@ BEGIN
 			TABLOCK
 		);
 
-		--SELECT * FROM bronze_PX_CAT_G1V2;
-		--SELECT COUNT(*) FROM bronze_PX_CAT_G1V2;
+		--SELECT * FROM bronze_erp_PX_CAT_G1V2;
+		--SELECT COUNT(*) FROM bronze_erp_PX_CAT_G1V2;
 		SET @end_time = GETDATE();
 		PRINT('>>Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + 'seconds');
 		SET @batch_end_time = GETDATE();
