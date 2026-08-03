@@ -1,7 +1,10 @@
+/*
+
 ## Create Bronze tables
 ------------------------------
 ## Script Purpose : This script drops the existing tables and creates six tables in bronze schema, 
 ------------------------------
+*/
 
 IF OBJECT_ID ('bronze_crm_cust_info', 'U') IS NOT NULL
 	DROP TABLE bronze_crm_cust_info;
